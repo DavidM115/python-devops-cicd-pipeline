@@ -1,7 +1,9 @@
 import logging
+from collections.abc import Collection
+
 import click
+
 from .checker import check_urls
-from typing import Collection
 
 logging.basicConfig(
     level=logging.INFO,
