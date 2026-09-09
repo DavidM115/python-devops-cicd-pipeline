@@ -46,10 +46,7 @@ def check_urls(
             logger.warning(f"Connection error for {url}.")
         except requests.exceptions.RequestException as e:
             status = f"REQUEST_ERROR: {type(e).__name__}"
-            logger.error(
-                f"An unexpected request error occured for {url}: {e}",
-                exc_info=True,
-            )
+            logger.exception("An unexpected request error")
 
         results[url] = status
         logger.debug(f"Checked: {url:<40} -> {status}")
