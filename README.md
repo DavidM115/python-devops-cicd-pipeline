@@ -5,7 +5,7 @@ This repo contains the code for the CI/CD pipeline section of my Python for DevO
 
 [x] Implement the project (code files)
 [x] Add a simple GHA workflow and make sure it runs until completion
-[] Add linting (ruff) and format checks (black)
+[x] Add linting (ruff) and format checks (black)
 [] Add typing and security checks
 [] Add test automation
 [] Build our Python project
