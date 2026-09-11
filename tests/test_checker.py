@@ -63,7 +63,6 @@ def test_check_urls_request_exceptions(
     mock_requests_get = mocker.patch(
         "simple_http_checker.checker.requests.get"
     )
-
     mock_requests_get.side_effect = error_exception(
         f"Simulated {expected_status}"
     )
@@ -104,19 +103,18 @@ def test_check_urls_with_multiple_urls(mocker: MockerFixture):
     ]
 
     urls = [
-        "https://www.success.com/",
-        "https://www.timeout.com/",
-        "https://www.servererror.com/",
+        "https://success.com",
+        "https://timeout.com",
+        "https://servererror.com",
     ]
     results = check_urls(urls)
 
     assert len(results) == 3
     assert mock_requests_get.call_count == 3
-    assert results["https://www.success.com/"] == "200 OK"
-    assert results["https://www.timeout.com/"] == "TIMEOUT"
+    assert results["https://success.com"] == "200 OK"
+    assert results["https://timeout.com"] == "TIMEOUT"
     assert (
-        results["https://www.servererror.com/"]
-        == "500 Server Error"
+        results["https://servererror.com"] == "500 Server Error"
     )
 
 
