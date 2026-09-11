@@ -1,6 +1,8 @@
 from click.testing import CliRunner
 from pytest_mock import MockerFixture
+
 from simple_http_checker.cli import main
+
 
 def test_no_urls():
     runner = CliRunner()

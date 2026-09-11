@@ -4,6 +4,7 @@ from pytest_mock import MockerFixture
 
 from simple_http_checker.checker import check_urls
 
+
 def test_check_urls_success(mocker: MockerFixture):
     mock_requests_get = mocker.patch("simple_http_checker.checker.requests.get")
 
