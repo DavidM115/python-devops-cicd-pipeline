@@ -25,7 +25,7 @@ def test_main_single_url_success(mocker: MockerFixture):
     assert result.exit_code == 0
     mock_check.assert_called_once_with((url,), 5)
 
-    assert "---Results---" in result.output
+    assert "--- Results ---" in result.output
     assert url in result.output
     assert "-> 200 OK" in result.output
 
@@ -35,7 +35,6 @@ def test_main_timeout_option(mocker: MockerFixture):
     mock_check = mocker.patch(
         "simple_http_checker.cli.check_urls"
     )
-
     mock_check.return_value = {url: "TIMEOUT"}
 
     runner = CliRunner()
@@ -44,6 +43,6 @@ def test_main_timeout_option(mocker: MockerFixture):
     assert result.exit_code == 0
     mock_check.assert_called_once_with((url,), 10)
 
-    assert "---Results---" in result.output
+    assert "--- Results ---" in result.output
     assert url in result.output
     assert "TIMEOUT" in result.output
