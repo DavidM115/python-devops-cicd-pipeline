@@ -8,5 +8,5 @@ This repo contains the code for the CI/CD pipeline section of my Python for DevO
 [x] Add linting (ruff) and format checks (black)
 [x] Add typing and security checks
 [x] Add test automation
-[] Build our Python project
-[] Publish the project to both TestPyPi and PyPi when a new tag is pushed 
+[x] Build our Python project
+[x] Publish the project to both TestPyPi and PyPi when a new release is published 
